@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1285.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsuir.client.sample.controllers.AdminController">
+   <children>
+      <VBox prefHeight="802.0" prefWidth="299.0" style="-fx-background-color: #e72a2a;">
+         <children>
+            <Pane prefHeight="188.0" prefWidth="294.0">
+               <children>
+                  <Label layoutX="11.0" layoutY="36.0" prefHeight="65.0" prefWidth="279.0" text="Детали" textFill="WHITE">
+                     <font>
+                        <Font name="SansSerif Bold" size="57.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Button fx:id="usersButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="70.0" prefWidth="294.0" style="-fx-background-color: #e72a2a;" text="Пользователи" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="58.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/users2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Tahoma" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="projectButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="70.0" prefWidth="294.0" style="-fx-background-color: #e72a2a;" text="Детали" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/project2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Tahoma" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="tasksButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="70.0" prefWidth="294.0" style="-fx-background-color: #e72a2a;" text="Метод" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/task.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Tahoma" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="backButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handleCliks" prefHeight="70.0" prefWidth="294.0" style="-fx-background-color: #e72a2a;" text="Назад" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/exit3.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Tahoma" size="23.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="122.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/admin.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="80.0" top="80.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label prefHeight="49.0" prefWidth="294.0" text="Администратор" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <padding>
+                  <Insets left="50.0" top="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <StackPane layoutX="288.0" layoutY="-1.0" prefHeight="802.0" prefWidth="995.0">
+         <children>
+            <Pane fx:id="projectPane" prefHeight="800.0" prefWidth="1018.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutY="32.0" prefHeight="100.0" prefWidth="992.0" style="-fx-background-color: #e72a2a;">
+                     <children>
+                        <Label fx:id="statusLabel1" layoutX="365.0" layoutY="22.0" text="Проекты" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="39.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <GridPane layoutX="8.0" layoutY="154.0" prefHeight="569.0" prefWidth="970.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="29.333343505859375" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="548.5999969482422" minHeight="0.0" prefHeight="42.3999969482422" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="548.5999969482422" minHeight="0.0" prefHeight="47.20000305175782" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="548.5999969482422" minHeight="10.0" prefHeight="459.666650390625" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TableView fx:id="projectTable" prefHeight="480.0" prefWidth="970.0" stylesheets="@../styles/Style2.css" GridPane.rowIndex="3">
+                          <columns>
+                            <TableColumn fx:id="idProject" prefWidth="65.0" text="Индекс" />
+                            <TableColumn fx:id="constructor" prefWidth="149.0" text="Конструктор" />
+                              <TableColumn fx:id="manager" prefWidth="154.66668701171875" text="Руководитель" />
+                              <TableColumn fx:id="engineer" prefWidth="148.00006103515625" text="Инженер" />
+                              <TableColumn fx:id="name" prefWidth="172.0" text="Название" />
+                              <TableColumn fx:id="number" prefWidth="95.0" text="Количество" />
+                              <TableColumn fx:id="format" prefWidth="92.0" text="Тип" />
+                              <TableColumn fx:id="machine" prefWidth="133.0" text="№ станка" />
+                          </columns>
+                        </TableView>
+                        <HBox prefHeight="50.0" prefWidth="970.0">
+                           <children>
+                              <Text fill="#2f0c82" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Конструктор" textAlignment="CENTER" wrappingWidth="125.60345458984375">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#2f0c82" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Руководитель" textAlignment="CENTER" wrappingWidth="128.80340576171875">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#2f0c82" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Инженер" textAlignment="CENTER" wrappingWidth="134.13672637939453">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#2f0c82" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Название" textAlignment="CENTER" wrappingWidth="143.73675537109375">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#2f0c82" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Количество" textAlignment="CENTER" wrappingWidth="86.4033203125">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#2f0c82" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="Тип" textAlignment="CENTER" wrappingWidth="102.13677978515625">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#2f0c82" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" text="№ станка" textAlignment="CENTER" wrappingWidth="73.3367919921875">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="970.0" spacing="5.0" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="constructorField" prefHeight="26.0" prefWidth="128.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="managerField" prefHeight="26.0" prefWidth="126.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="engineerField" prefHeight="26.0" prefWidth="127.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="nameField" prefHeight="26.0" prefWidth="138.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="numberField" prefHeight="30.0" prefWidth="81.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="formatName" prefHeight="26.0" prefWidth="87.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="machineField" prefHeight="26.0" prefWidth="73.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="addButton" mnemonicParsing="false" onAction="#addProject" prefHeight="30.0" prefWidth="52.0" style="-fx-background-color: #3ad30f;" stylesheets="@../styles/Style.css" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="29.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/plus.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteProject" prefHeight="3.0" prefWidth="55.0" style="-fx-background-color: #3ad30f;" stylesheets="@../styles/Style.css" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="34.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/delete.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="editButton" mnemonicParsing="false" onAction="#editProject" prefHeight="10.0" prefWidth="52.0" style="-fx-background-color: #3ad30f;" stylesheets="@../styles/Style.css" textFill="WHITE">
+                                 <graphic>
+                                    <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../assets/edit.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <TextField fx:id="searchPrField" onAction="#searchProject" prefHeight="29.0" prefWidth="920.0" promptText="Поиск" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" right="30.0" />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <Button layoutX="415.0" layoutY="742.0" mnemonicParsing="false" onAction="#adPrForTask" prefHeight="38.0" prefWidth="203.0" style="-fx-background-color: #3ad30f;" stylesheets="@../styles/Style.css" text="Добавить деталь в задачу" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="taskPane" prefHeight="804.0" prefWidth="1019.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <Pane layoutY="32.0" prefHeight="102.0" prefWidth="992.0" style="-fx-background-color: #e72a2a;">
+                     <children>
+                        <Label fx:id="statusLabel11" layoutX="412.0" layoutY="26.0" text="Метод" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="39.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <GridPane layoutX="76.0" layoutY="350.0" prefHeight="234.0" prefWidth="706.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="439.0" minWidth="10.0" prefWidth="361.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="341.0" minWidth="10.0" prefWidth="129.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="406.0" minWidth="10.0" prefWidth="114.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="427.0" minWidth="10.0" prefWidth="112.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="107.79999389648438" minHeight="10.0" prefHeight="83.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="163.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="268.00001220703126" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="135.0" prefWidth="360.0" style="-fx-border-color: #000000;" text="Деталь" textAlignment="CENTER">
+                           <font>
+                              <Font size="43.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="87.0" prefWidth="358.0" style="-fx-border-color: #000000;" text="Пессимистическая  оценка, тыс. дол." GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" prefHeight="101.0" prefWidth="358.0" style="-fx-border-color: #000000;" text="Оптимистическая оценка, тыс. дол." GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" prefHeight="88.0" prefWidth="138.0" style="-fx-border-color: #000000;" text="Д1" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="88.0" prefWidth="138.0" style="-fx-border-color: #000000;" text="Д2" GridPane.columnIndex="2">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="84.0" prefWidth="111.0" style="-fx-border-color: #000000;" text="Д3" GridPane.columnIndex="3">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="mark11" alignment="CENTER" prefHeight="109.0" prefWidth="126.0" promptText="Оценка 1" style="-fx-border-color: #000000;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="mark12" alignment="CENTER" prefHeight="115.0" prefWidth="112.0" promptText="Оценка 2" style="-fx-border-color: #000000;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="mark13" alignment="CENTER" prefHeight="137.0" prefWidth="110.0" promptText="Оценка 3" style="-fx-border-color: #000000;" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="mark21" alignment="CENTER" prefHeight="139.0" prefWidth="126.0" promptText="Оценка 1" style="-fx-border-color: #000000;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="mark22" alignment="CENTER" prefHeight="134.0" prefWidth="112.0" promptText="Оценка 2" style="-fx-border-color: #000000;" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="mark23" alignment="CENTER" prefHeight="167.0" prefWidth="110.0" promptText="Оценка 3" style="-fx-border-color: #000000;" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="20.0" />
+                           </font></TextField>
+                     </children>
+                  </GridPane>
+                  <TextField fx:id="mProfit" layoutX="424.0" layoutY="651.0" prefHeight="38.0" prefWidth="73.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font></TextField>
+                  <Button fx:id="singlSolutionButton" layoutX="496.0" layoutY="651.0" mnemonicParsing="false" onAction="#singlSolution" prefHeight="21.0" prefWidth="112.0" style="-fx-background-color: #37b119;" stylesheets="@../styles/Style.css" text="Вычислить" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <TableView fx:id="selectedPrTable" layoutX="397.0" layoutY="154.0" prefHeight="122.0" prefWidth="224.0" stylesheets="@../styles/Style2.css">
+                    <columns>
+                      <TableColumn fx:id="selectedProject" prefWidth="75.0" text="Детали" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <Button layoutX="667.0" layoutY="205.0" mnemonicParsing="false" onAction="#deletePr" style="-fx-background-color: #37b119;" stylesheets="@../styles/Style.css" text="Удалить деталь" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="76.0" layoutY="676.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Введите ожидаемую среднюю прибыль">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane fx:id="userPane" prefHeight="800.0" prefWidth="955.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <GridPane layoutX="14.0" layoutY="228.0" prefHeight="558.0" prefWidth="970.0">
+                    <columnConstraints>
+                      <ColumnConstraints />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="273.9999755859375" minHeight="10.0" prefHeight="48.60003662109375" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="521.4667114257812" minHeight="10.0" prefHeight="510.9999633789063" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TableView fx:id="userTable" prefHeight="510.0" prefWidth="939.0" stylesheets="@../styles/Style2.css" tableMenuButtonVisible="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <columns>
+                              <TableColumn fx:id="id" prefWidth="35.733306884765625" text="ID" />
+                              <TableColumn fx:id="firstName" prefWidth="172.00003051757812" text="Имя" />
+                              <TableColumn fx:id="lastName" prefWidth="210.39996337890625" text="Фамилия" />
+                              <TableColumn fx:id="email" prefWidth="223.7332763671875" text="Адрес электронной почты" />
+                              <TableColumn fx:id="userName" prefWidth="170.39990234375" text="Логин" />
+                              <TableColumn fx:id="password" prefWidth="138.9334716796875" text="Пароль" />
+                           </columns>
+                        </TableView>
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assets/search.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="searchField" onAction="#searchUser" prefHeight="33.0" prefWidth="725.0" promptText="Поиск" style="-fx-border-color: #5b55e0;" />
+                              <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #5b55e0;" stylesheets="@../styles/Style.css" text="Редактировать" textFill="WHITE" />
+                              <Button fx:id="delete" mnemonicParsing="false" onAction="#deleteUser" prefHeight="26.0" prefWidth="68.0" style="-fx-background-color: #5b55e0;" stylesheets="@../styles/Style.css" text="Удаить" textFill="WHITE" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets right="5.0" />
+                     </opaqueInsets>
+                  </GridPane>
+                  <Pane layoutX="-1.0" layoutY="33.0" prefHeight="99.0" prefWidth="994.0" style="-fx-background-color: #e72a2a;">
+                     <children>
+                        <Label fx:id="statusLabel" layoutX="388.0" layoutY="20.0" text="Пользователи" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="39.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
